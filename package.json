@@ -36,6 +36,7 @@
     "react-prod": "webpack -p --watch",
     "seed": "node ./database/seed.js",
     "seedT": "node ./database/test.js",
+    "data": "node ./database/datagenerator.js",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage || true"
