@@ -1,8 +1,8 @@
 const faker = require('faker');
-const data = require('fs').createWriteStream('database/sample/data.csv');
-const images = require('fs').createWriteStream('database/sample/images.csv');
-const tags = require('fs').createWriteStream('database/sample/tags.csv');
-const types = require('fs').createWriteStream('database/sample/types.csv');
+const data = require('fs').createWriteStream('database/files/data.csv');
+const images = require('fs').createWriteStream('database/files/images.csv');
+const tags = require('fs').createWriteStream('database/files/tags.csv');
+const types = require('fs').createWriteStream('database/files/types.csv');
 
 const generateData = async (callback) => {
     
@@ -15,7 +15,7 @@ const generateData = async (callback) => {
     tags.write('listingId|tag\n');
     types.write('listingId|type\n');
     // create 10m records 
-    for(let id = 1; id <= 5; id++) {
+    for(let id = 1; id <= 1e7; id++) {
         // generate random number for photo, tags and cuisines
         const randPhotoNum = Math.floor(Math.random() * 35 + 10);
         const randTagNum = Math.floor(Math.random() * 10 + 3);

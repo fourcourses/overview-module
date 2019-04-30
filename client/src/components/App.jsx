@@ -37,10 +37,10 @@ class App extends React.Component {
       dataType: 'json',
       success: (data) => {
         this.setState({
-          restaurant: data[0],
-          images: data[0].images
+          restaurant: data,
+          images: JSON.parse(data.photos)
         })
-        $('.headerImg').css('background', `url(${data[0].images[0].imageUrl}) center center`)
+        $('.headerImg').css('background', `url(${JSON.parse(data.photos)[0].imgUrl}) center center`)
         $('.headerImg').css('background-size', 'cover');
       },
       error: () => {console.log('Error client get request')}
