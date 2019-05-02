@@ -7,7 +7,7 @@ const client = new cassandra.Client({ contactPoints: ['127.0.0.1'], localDataCen
 const app = express();
 
 
-// app.use(express.urlencoded());
+// app.use(express.urlencoded());echo fs.inotify.max_user_watches=582222 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 // app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({extended: false}));
 

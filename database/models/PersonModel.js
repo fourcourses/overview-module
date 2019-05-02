@@ -42,4 +42,8 @@ listModel.syncDB(function(err, result) {
     console.log(result);
     // result == true if any database schema was updated
     // result == false if no schema change was detected in your models
+
+
+    // COPY overview.posts (id,name,description,photos,tags,cuisines,reviews,"priceStart","priceEnd") FROM '/home/basti/overview-module/database/files/data.csv' WITH DELIMITER = "|" AND  HEADER = TRUE;
+
 });

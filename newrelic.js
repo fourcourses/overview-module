@@ -1,6 +1,6 @@
 'use strict'
 /**
- * New Relic agent configuration.
+ * New Relic agent configuration.7329bec9ba29f6c4ce557be71b9106f65d01b35d
  *
  * See lib/config/default.js in the agent distribution for a more complete
  * description of configuration variables and their potential values.

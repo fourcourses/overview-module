@@ -5,7 +5,7 @@ class Description extends React.Component {
   constructor(props){
     super(props);
     this.state = { 
-      ratingPercent: (this.props.restaurant.rating / 5) * 100,
+      ratingPercent: (Math.random() / 5) * 100,
       read: false
     }
   }
@@ -31,14 +31,14 @@ class Description extends React.Component {
         <div className="empty-stars"></div>
         <div className="full-stars" style={{width: this.state.ratingPercent + '%'}}></div>
         </div>
-      <div className="reviewNumber">&nbsp;&nbsp;{this.props.restaurant.rating.toFixed(1)}</div>
+      <div className="reviewNumber">&nbsp;&nbsp;{2.5}</div>
     </div>
 
     <div className="reviews"><img src="/images/icon1.png"/>&nbsp;&nbsp;{this.props.restaurant.reviews} reviews</div> 
-    <div className="priceRanger"><img src="/images/icon2.png"/>&nbsp;&nbsp;${this.props.restaurant.priceRange.start}-${this.props.restaurant.priceRange.end}</div>
-    <div className="types"><img src="/images/icon3.png"/>&nbsp;&nbsp;{this.props.restaurant.type[0]}</div>
+    <div className="priceRanger"><img src="/images/icon2.png"/>&nbsp;&nbsp;${this.props.restaurant.priceStart}-${this.props.restaurant.priceEnd}</div>
+    <div className="types"><img src="/images/icon3.png"/>&nbsp;&nbsp;{`basti`}</div>
     </div>
-    <div className="tags"><Tags tags={this.props.restaurant.tags}/>
+    <div className="tags"><Tags tags={JSON.parse(this.props.restaurant.tags)}/>
     </div>
 
 
