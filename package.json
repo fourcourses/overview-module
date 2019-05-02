@@ -34,7 +34,6 @@
     "start": "nodemon ./server/server.js",
     "react-dev": "webpack -d --watch",
     "react-prod": "webpack -p --watch",
-    "seedSQL": "node ./database/datagenerator.js",
     "seedNoSQL": "node ./database/noSQLdatagenerator.js",
     "seed": "node ./database/models/PersonModel.js",
     "test": "jest",

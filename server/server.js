@@ -7,7 +7,7 @@ const client = new cassandra.Client({ contactPoints: ['127.0.0.1'], localDataCen
 const app = express();
 
 
-// app.use(express.urlencoded());
+// app.use(express.urlencoded());echo fs.inotify.max_user_watches=582222 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 // app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({extended: false}));
 
@@ -17,7 +17,7 @@ app.use('/restaurant/:rid', express.static(__dirname + '/../public/dist'));
 
 app.get('/api/restaurant/:rid', function (req, res) {
     const id = parseInt(req.params.rid)
-    client.execute('SELECT * FROM posts where id = ? limit 1',[id], {prepare: true}, (err, result) => {
+    client.execute('SELECT * FROM sample where id = ? limit 1',[id], {prepare: true}, (err, result) => {
         if(err)
           res.header(400).send(err);
 

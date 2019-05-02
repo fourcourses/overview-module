@@ -1,3 +1,4 @@
+node_modules
 ## MAC files ##
 .DS_Store
 
@@ -5,6 +6,8 @@
 npm
 npm-debug.log
 node_modules/
+database/sample
+database/files/data.csv
 overview.pem
 overview2.pem
 bundle.js

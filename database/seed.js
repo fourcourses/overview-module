@@ -43,17 +43,17 @@ const types = [];
 for(var j = 0; j < randCuiNum; j++){
   var randCuisineIndex = Math.floor(Math.random() * cuisine.length);
   types.push(cuisine[randCuisineIndex])
-}
+}paragraphs(3)
 
 
 const samplePosts = { 
     id: i,
     name: faker.random.word(),
-    description: faker.lorem.paragraphs(3),
+    description: faker.lorem.sentences(),
     images: JSON.stringify(photoArray),
-	reviews: faker.random.number({min: 1, max: 999}),
-	rating: faker.random.number({min: 2, max: 5, precision: 0.01}),
-	tags: JSON.stringify(tags),
+  	reviews: faker.random.number({min: 1, max: 999}),
+  	rating: faker.random.number({min: 2, max: 5, precision: 0.01}),
+  	tags: JSON.stringify(tags),
     priceStart: faker.random.number({min: 3, max: 10}),
     priceEnd: faker.random.number({min: 11, max: 30}),
 	type: JSON.stringify(types)

@@ -39,9 +39,11 @@ class App extends React.Component {
         this.setState({
           restaurant: data,
           images: JSON.parse(data.photos)
-        })
-        $('.headerImg').css('background', `url(${JSON.parse(data.photos)[0].imgUrl}) center center`)
-        $('.headerImg').css('background-size', 'cover');
+        },()=> {
+          console.log('im here',JSON.parse(data.photos)[0].imgUrl)
+          $('.headerImg').css('background', `url(${JSON.parse(data.photos)[0].imgUrl}) center center`)
+          $('.headerImg').css('background-size', 'cover');
+        })   
       },
       error: () => {console.log('Error client get request')}
     })    
