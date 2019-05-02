@@ -17,7 +17,7 @@ app.use('/restaurant/:rid', express.static(__dirname + '/../public/dist'));
 
 app.get('/api/restaurant/:rid', function (req, res) {
     const id = parseInt(req.params.rid)
-    client.execute('SELECT * FROM sample where id = ? limit 1',[id], {prepare: true}, (err, result) => {
+    client.execute('SELECT * FROM posts where id = ? limit 1',[id], {prepare: true}, (err, result) => {
         if(err)
           res.header(400).send(err);
 
