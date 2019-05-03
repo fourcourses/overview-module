@@ -10,6 +10,7 @@ import Menu from './Menu.jsx';
 import Reviews from './Reviews.jsx';
 import Booking from './Booking.jsx';
 
+
 import $ from 'jquery';
 
 class App extends React.Component {
@@ -36,6 +37,7 @@ class App extends React.Component {
       method: 'GET',
       dataType: 'json',
       success: (data) => {
+        console.log(data)
         this.setState({
           restaurant: data,
           images: JSON.parse(data.photos)

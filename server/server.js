@@ -1,15 +1,13 @@
 require('newrelic');
 const express = require('express');
-// const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 const port = 3000;
 const cassandra = require('cassandra-driver');
 const client = new cassandra.Client({ contactPoints: ['127.0.0.1'], localDataCenter: 'datacenter1', keyspace: 'overview' });
 const app = express();
+const fetch = require('node-fetch');
 
 
-// app.use(express.urlencoded());echo fs.inotify.max_user_watches=582222 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({extended: false}));
 
 
 app.use('/', express.static(__dirname + '/../public/dist'));
@@ -17,12 +15,10 @@ app.use('/restaurant/:rid', express.static(__dirname + '/../public/dist'));
 
 app.get('/api/restaurant/:rid', function (req, res) {
     const id = parseInt(req.params.rid)
-    client.execute('SELECT * FROM posts where id = ? limit 1',[id], {prepare: true}, (err, result) => {
-        if(err)
-          res.header(400).send(err);
-
-        res.header(200).send(result.rows[0])
-    })
+    fetch('http://ec2-3-17-6-2.us-east-2.compute.amazonaws.com:3000/api/restaurant/'+id)
+    .then(data => data.json())
+    .then(result => res.header(200).send(result))
+    .catch(err => res.header(400).send(err))
 
 });
 
